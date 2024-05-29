@@ -35,8 +35,8 @@ if (isset($_SESSION['absen'])) { ?>
                         } elseif ($_SESSION['absen'] == 'pulang') {
                            echo 'Kamu sudah melakukan absen pulang hari ini.';
                         } ?></p>
-                  <a href="<?= base_url() ?>/karyawan/absen" class="btn btn-linear-primary my-1 waves-effect waves-light">
-                     Kembali
+                  <a href="<?= base_url() ?>/logout" class="btn btn-linear-primary my-1 waves-effect waves-light">
+                     Logout
                   </a>
                </div>
             </div>

@@ -115,7 +115,10 @@ if (!isset($_SESSION['karyawan'])) {
       $masuk_akhir = date('Hi', strtotime($j_karyawan['masuk_akhir']));
       $pulang_mulai = date('Hi', strtotime($j_karyawan['pulang_mulai']));
       $pulang_akhir = date('Hi', strtotime($j_karyawan['pulang_akhir']));
-      $waktu_sekarang = date('Hi');
+      $waktu_sekarang = new DateTime();
+
+      $waktu_sekarang->modify('-1 hour');
+      $waktu_sekarang = $waktu_sekarang->format('Hi');
 
       $tanggal = date('d');
       $bulan_tahun = date('m-Y');
