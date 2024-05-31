@@ -21,7 +21,7 @@ if (isset($_SESSION['siswa'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Daftar Akun Siswa <?= $tb_setelan['nama'] ?></title>
-   <link rel="shortcut icon" href="<?= base_url() ?>/assets/img/icons8-checkmark-48.png" type="image/x-icon">
+   <link rel="shortcut icon" href="<?= base_url() ?>/assets/img/logo.png" type="image/x-icon">
    <link rel="stylesheet" href="<?= base_url() ?>/assets/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="<?= base_url() ?>/assets/select2/css/select2.min.css">
    <link rel="stylesheet" href="<?= base_url() ?>/assets/select2-bootstrap4/select2-bootstrap4.min.css">
