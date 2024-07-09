@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 02 Jun 2023 pada 21.44
--- Versi server: 10.6.13-MariaDB
--- Versi PHP: 8.1.16
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 13 Jun 2024 pada 08.03
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,14 @@ CREATE TABLE `a_masuk` (
   `m_tanggal` varchar(2) DEFAULT NULL,
   `m_bulan_tahun` varchar(16) DEFAULT NULL,
   `token_kelas` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masuk`
+--
+
+INSERT INTO `a_masuk` (`id_absen`, `id_guru`, `id_siswa`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `hadir`, `izin`, `sakit`, `m_tanggal`, `m_bulan_tahun`, `token_kelas`) VALUES
+(2, 2, 3, NULL, NULL, NULL, NULL, NULL, '20240001-1717674814', NULL, NULL, NULL, '20240001-1718026856', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, '10', '06-2024', 'b8918b3fc6820295557c0a1762a68154');
 
 -- --------------------------------------------------------
 
@@ -86,7 +93,23 @@ CREATE TABLE `a_masukket` (
   `longitude` varchar(64) NOT NULL,
   `token_masuk` varchar(64) NOT NULL,
   `token_kelas` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masukket`
+--
+
+INSERT INTO `a_masukket` (`id_masukket`, `m_alasan`, `m_ket`, `m_foto`, `m_pada`, `latitude`, `longitude`, `token_masuk`, `token_kelas`) VALUES
+(1, 'hadir', 'Hadir', '73429892345-1716862732.png', 1716862732, '-7.9166892', '112.6349243', '73429892345-1716862732', 'b8918b3fc6820295557c0a1762a68154'),
+(2, 'hadir', 'Hadir', '73429892345-1716863022.png', 1716863022, '-7.9167113', '112.634935', '73429892345-1716863022', 'b8918b3fc6820295557c0a1762a68154'),
+(3, 'hadir', 'Hadir', '73429892345-1716884486.png', 1716884486, '-7.9100506', '112.6664203', '73429892345-1716884486', 'b8918b3fc6820295557c0a1762a68154'),
+(4, 'hadir', 'Hadir', '73429892345-1716884550.png', 1716884550, '-7.9100506', '112.6664203', '73429892345-1716884550', 'b8918b3fc6820295557c0a1762a68154'),
+(5, 'hadir', 'Hadir', '73429892345-1716952399.png', 1716952399, '-7.9172188', '112.6340469', '73429892345-1716952399', 'b8918b3fc6820295557c0a1762a68154'),
+(6, 'hadir', 'Hadir', '73429892345-1716953735.png', 1716953735, '-7.962624', '112.623616', '73429892345-1716953735', 'b8918b3fc6820295557c0a1762a68154'),
+(7, 'hadir', 'Hadir', '73429892345-1716954903.png', 1716954903, '-7.962624', '112.623616', '73429892345-1716954903', 'b8918b3fc6820295557c0a1762a68154'),
+(8, 'hadir', 'Hadir', '73429892345-1716957449.png', 1716957449, '-7.9167028', '112.6349396', '73429892345-1716957449', 'b8918b3fc6820295557c0a1762a68154'),
+(9, 'hadir', 'Hadir', '20240001-1717674814.png', 1717674814, '-7.9100667', '112.6664062', '20240001-1717674814', 'b8918b3fc6820295557c0a1762a68154'),
+(10, 'hadir', 'Hadir', '20240001-1718026856.png', 1718026856, '-7.910078', '112.666406', '20240001-1718026856', 'b8918b3fc6820295557c0a1762a68154');
 
 -- --------------------------------------------------------
 
@@ -103,7 +126,16 @@ CREATE TABLE `a_masukket_guru` (
   `latitude` varchar(64) NOT NULL,
   `longitude` varchar(64) NOT NULL,
   `token_masuk` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masukket_guru`
+--
+
+INSERT INTO `a_masukket_guru` (`id_masukket`, `m_alasan`, `m_ket`, `m_foto`, `m_pada`, `latitude`, `longitude`, `token_masuk`) VALUES
+(1, 'hadir', 'Hadir', 'Ginanjar-1716958118.png', 1716958118, '-7.9166934', '112.634971', 'Ginanjar-1716958118'),
+(2, 'hadir', 'Hadir', 'Ginanjar-1717052912.png', 1717052912, '-7.9173685', '112.6342554', 'Ginanjar-1717052912'),
+(3, 'hadir', 'Hadir', '1984123459-1717675608.png', 1717675608, '-7.9100501', '112.6664282', '1984123459-1717675608');
 
 -- --------------------------------------------------------
 
@@ -120,7 +152,16 @@ CREATE TABLE `a_masukket_karyawan` (
   `latitude` varchar(64) NOT NULL,
   `longitude` varchar(64) NOT NULL,
   `token_masuk` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masukket_karyawan`
+--
+
+INSERT INTO `a_masukket_karyawan` (`id_masukket`, `m_alasan`, `m_ket`, `m_foto`, `m_pada`, `latitude`, `longitude`, `token_masuk`) VALUES
+(1, 'hadir', 'Hadir', '23472639486-1716959195.png', 1716959195, '-7.9166905', '112.6349598', '23472639486-1716959195'),
+(2, 'hadir', 'Hadir', '23472639486-1717052661.png', 1717052661, '-7.9173681', '112.6342632', '23472639486-1717052661'),
+(3, 'hadir', 'Hadir', '1984123466-1717676181.png', 1717676181, '-7.9100649', '112.6664102', '1984123466-1717676181');
 
 -- --------------------------------------------------------
 
@@ -167,7 +208,15 @@ CREATE TABLE `a_masuk_guru` (
   `sakit` int(11) DEFAULT NULL,
   `m_tanggal` varchar(2) DEFAULT NULL,
   `m_bulan_tahun` varchar(16) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masuk_guru`
+--
+
+INSERT INTO `a_masuk_guru` (`id_absen`, `id_guru`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `hadir`, `izin`, `sakit`, `m_tanggal`, `m_bulan_tahun`) VALUES
+(1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ginanjar-1716958118', 'Ginanjar-1717052912', NULL, 2, NULL, NULL, '30', '05-2024'),
+(2, 24, NULL, NULL, NULL, NULL, NULL, '1984123459-1717675608', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, '06', '06-2024');
 
 -- --------------------------------------------------------
 
@@ -214,7 +263,15 @@ CREATE TABLE `a_masuk_karyawan` (
   `sakit` int(11) DEFAULT NULL,
   `m_tanggal` varchar(2) DEFAULT NULL,
   `m_bulan_tahun` varchar(16) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_masuk_karyawan`
+--
+
+INSERT INTO `a_masuk_karyawan` (`id_absen`, `id_karyawan`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `hadir`, `izin`, `sakit`, `m_tanggal`, `m_bulan_tahun`) VALUES
+(1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23472639486-1716959195', '23472639486-1717052661', NULL, 2, NULL, NULL, '30', '05-2024'),
+(2, 20, NULL, NULL, NULL, NULL, NULL, '1984123466-1717676181', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, '06', '06-2024');
 
 -- --------------------------------------------------------
 
@@ -261,7 +318,14 @@ CREATE TABLE `a_pulang` (
   `p_tanggal` varchar(2) DEFAULT NULL,
   `p_bulan_tahun` varchar(16) DEFAULT NULL,
   `token_kelas` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulang`
+--
+
+INSERT INTO `a_pulang` (`id_absen`, `id_guru`, `id_siswa`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `pulang`, `p_tanggal`, `p_bulan_tahun`, `token_kelas`) VALUES
+(2, 2, 3, NULL, NULL, NULL, NULL, NULL, '20240001-1717674941', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '06', '06-2024', 'b8918b3fc6820295557c0a1762a68154');
 
 -- --------------------------------------------------------
 
@@ -277,7 +341,21 @@ CREATE TABLE `a_pulangket` (
   `longitude` varchar(64) NOT NULL,
   `token_pulang` varchar(64) NOT NULL,
   `token_kelas` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulangket`
+--
+
+INSERT INTO `a_pulangket` (`id_pulangket`, `p_foto`, `p_pada`, `latitude`, `longitude`, `token_pulang`, `token_kelas`) VALUES
+(1, '73429892345-1716954305.png', 1716954305, '-7.962624', '112.623616', '73429892345-1716954305', 'b8918b3fc6820295557c0a1762a68154'),
+(2, '73429892345-1716955211.png', 1716955211, '-7.962624', '112.623616', '73429892345-1716955211', 'b8918b3fc6820295557c0a1762a68154'),
+(3, '73429892345-1716955318.png', 1716955318, '-7.962624', '112.623616', '73429892345-1716955318', 'b8918b3fc6820295557c0a1762a68154'),
+(4, '73429892345-1716955344.png', 1716955344, '-7.962624', '112.623616', '73429892345-1716955344', 'b8918b3fc6820295557c0a1762a68154'),
+(5, '73429892345-1716955352.png', 1716955352, '-7.962624', '112.623616', '73429892345-1716955352', 'b8918b3fc6820295557c0a1762a68154'),
+(6, '73429892345-1716955395.png', 1716955395, '-7.962624', '112.623616', '73429892345-1716955395', 'b8918b3fc6820295557c0a1762a68154'),
+(7, '73429892345-1716957840.png', 1716957840, '-7.962624', '112.623616', '73429892345-1716957840', 'b8918b3fc6820295557c0a1762a68154'),
+(8, '20240001-1717674941.png', 1717674941, '-7.910068', '112.6664099', '20240001-1717674941', 'b8918b3fc6820295557c0a1762a68154');
 
 -- --------------------------------------------------------
 
@@ -292,7 +370,16 @@ CREATE TABLE `a_pulangket_guru` (
   `latitude` varchar(64) NOT NULL,
   `longitude` varchar(64) NOT NULL,
   `token_pulang` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulangket_guru`
+--
+
+INSERT INTO `a_pulangket_guru` (`id_pulangket`, `p_foto`, `p_pada`, `latitude`, `longitude`, `token_pulang`) VALUES
+(1, 'Ginanjar-1716958205.png', 1716958205, '-7.962624', '112.623616', 'Ginanjar-1716958205'),
+(2, 'Ginanjar-1717053010.png', 1717053010, '-7.9105786', '112.6317722', 'Ginanjar-1717053010'),
+(3, '1984123459-1717675872.png', 1717675872, '-7.9100539', '112.6664147', '1984123459-1717675872');
 
 -- --------------------------------------------------------
 
@@ -307,7 +394,18 @@ CREATE TABLE `a_pulangket_karyawan` (
   `latitude` varchar(64) NOT NULL,
   `longitude` varchar(64) NOT NULL,
   `token_pulang` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulangket_karyawan`
+--
+
+INSERT INTO `a_pulangket_karyawan` (`id_pulangket`, `p_foto`, `p_pada`, `latitude`, `longitude`, `token_pulang`) VALUES
+(1, '23472639486-1716959509.png', 1716959509, '-7.916713', '112.6349552', '23472639486-1716959509'),
+(2, '23472639486-1716959540.png', 1716959540, '-7.916713', '112.6349552', '23472639486-1716959540'),
+(3, '23472639486-1716959575.png', 1716959575, '-7.9166917', '112.6349445', '23472639486-1716959575'),
+(4, '23472639486-1716960590.png', 1716960590, '-7.9167007', '112.6349609', '23472639486-1716960590'),
+(5, '1984123466-1717676811.png', 1717676811, '-7.9100689', '112.6664086', '1984123466-1717676811');
 
 -- --------------------------------------------------------
 
@@ -352,7 +450,15 @@ CREATE TABLE `a_pulang_guru` (
   `pulang` int(11) DEFAULT NULL,
   `p_tanggal` varchar(2) DEFAULT NULL,
   `p_bulan_tahun` varchar(16) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulang_guru`
+--
+
+INSERT INTO `a_pulang_guru` (`id_absen`, `id_guru`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `pulang`, `p_tanggal`, `p_bulan_tahun`) VALUES
+(1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ginanjar-1716958205', 'Ginanjar-1717053010', NULL, 2, '30', '05-2024'),
+(2, 24, NULL, NULL, NULL, NULL, NULL, '1984123459-1717675872', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '06', '06-2024');
 
 -- --------------------------------------------------------
 
@@ -397,7 +503,15 @@ CREATE TABLE `a_pulang_karyawan` (
   `pulang` int(11) DEFAULT NULL,
   `p_tanggal` varchar(2) DEFAULT NULL,
   `p_bulan_tahun` varchar(16) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `a_pulang_karyawan`
+--
+
+INSERT INTO `a_pulang_karyawan` (`id_absen`, `id_karyawan`, `01`, `02`, `03`, `04`, `05`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `pulang`, `p_tanggal`, `p_bulan_tahun`) VALUES
+(1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23472639486-1716960590', NULL, NULL, 4, '29', '05-2024'),
+(2, 20, NULL, NULL, NULL, NULL, NULL, '1984123466-1717676811', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '06', '06-2024');
 
 -- --------------------------------------------------------
 
@@ -411,14 +525,14 @@ CREATE TABLE `j_guru` (
   `masuk_akhir` varchar(16) NOT NULL,
   `pulang_mulai` varchar(16) NOT NULL,
   `pulang_akhir` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `j_guru`
 --
 
 INSERT INTO `j_guru` (`id_j_guru`, `masuk_mulai`, `masuk_akhir`, `pulang_mulai`, `pulang_akhir`) VALUES
-(1, '04:00', '12:00', '18:00', '20:00');
+(1, '07:00', '08:00', '15:00', '16:00');
 
 -- --------------------------------------------------------
 
@@ -432,14 +546,14 @@ CREATE TABLE `j_karyawan` (
   `masuk_akhir` varchar(16) NOT NULL,
   `pulang_mulai` varchar(16) NOT NULL,
   `pulang_akhir` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `j_karyawan`
 --
 
 INSERT INTO `j_karyawan` (`id_j_karyawan`, `masuk_mulai`, `masuk_akhir`, `pulang_mulai`, `pulang_akhir`) VALUES
-(1, '06:00', '13:00', '15:00', '19:00');
+(1, '07:00', '08:00', '15:00', '16:00');
 
 -- --------------------------------------------------------
 
@@ -450,7 +564,7 @@ INSERT INTO `j_karyawan` (`id_j_karyawan`, `masuk_mulai`, `masuk_akhir`, `pulang
 CREATE TABLE `profil` (
   `id_profil` int(11) NOT NULL,
   `profil` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `profil`
@@ -478,14 +592,14 @@ CREATE TABLE `setelan` (
   `token_bot` varchar(64) NOT NULL,
   `url_telegram_group` varchar(64) NOT NULL,
   `api_maps` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `setelan`
 --
 
 INSERT INTO `setelan` (`id_setelan`, `nama`, `base_url`, `chat_id_group`, `token_bot`, `url_telegram_group`, `api_maps`) VALUES
-(1, 'Absensi Monitoring', 'https://smkanakindonesia.id/', 'PUNYA ANDA', 'PUNYA ANDA', 'PUNYA ANDA', 'PUNYA ANDA');
+(1, 'Absensi Monitoring', 'http://localhost/dc_absenku', 'PUNYA ANDA', 'PUNYA ANDA', 'PUNYA ANDA', 'PUNYA ANDA');
 
 -- --------------------------------------------------------
 
@@ -497,7 +611,7 @@ CREATE TABLE `tb_admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(128) NOT NULL,
   `password` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_admin`
@@ -519,14 +633,23 @@ CREATE TABLE `tb_guru` (
   `telegram` varchar(16) DEFAULT NULL,
   `profil` varchar(32) DEFAULT NULL,
   `password` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_guru`
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama`, `telegram`, `profil`, `password`) VALUES
-(2, 'Ginanjar', 'Ginanjarpurnama', NULL, 'user.png', '$2y$10$0r9lUB2nnYSKgr8lbyL80.P7F0bTtYRFGYSPrxx26iXtLfT2FXFXe');
+(2, '1984123456', 'Ginanjarpurnama', '', 'user.png', '$2y$10$Cu8SNT7Y5gfBiJIsbuDQq.IlxNGYN2HglT0zPyF/erTTdP8MgBQhu'),
+(24, '1984123459', 'Dodi Priyanto', NULL, 'user.png', '$2y$10$ZsRly8OfKrnG7gQLQT/u..dRXwWLIK5cdM/NUep9R.reDnmLyLkqK'),
+(25, '1984123458', 'Citra Puspita', NULL, 'user.png', '$2y$10$Bgd93fDaF/PqqkQkpYQp3uto/iUAMJwZOBm/zZWwGH/EPvimbPoRO'),
+(26, '1984123457', 'Bambang Sugiarto', NULL, 'user.png', '$2y$10$ZRYppDiMkTmw3PUxGxeLqOAmyx5QTKflWRqCzWZnaiK6pcyT2qKZC'),
+(27, '1984123460', 'Elvi Ramadhani', NULL, 'user.png', '$2y$10$54bUDOuEpsLge63RrdWPHujWwsfLyvgiM78dYjJPPPuwwCfTqhNKq'),
+(28, '1984123461', 'Faisal Ahmad', NULL, 'user.png', '$2y$10$PwHhCtAMZB93DpbmvjhAc.7HjcTBWHXsnDCeAKDePnCTQdht/LdPS'),
+(29, '1984123462', 'Gita Lestari', NULL, 'user.png', '$2y$10$dtsJNVPZ52l0DMJfGygJSuH09PL3s4wCzSjIxqN4iw38X/AhgO9.O'),
+(30, '1984123463', 'Hasan Basri', NULL, 'user.png', '$2y$10$rduCQbJ.pemxLjs1uN97M.VSx8BS3.GUEluGWPCQzJJTUawR2N1mK'),
+(31, '1984123464', 'Indri Permana', NULL, 'user.png', '$2y$10$G4zZO2.Rp1B7QdfLsR1GduNreCNW3ov.CHVj4G8yBPSBk5/zqu0tO'),
+(32, '1984123465', 'Joko Suryono', NULL, 'user.png', '$2y$10$ZjKd1jIpGhWEHmpbZl0gZOdp/elKKQM4BvZupbvul6jjKpjWcQiKa');
 
 -- --------------------------------------------------------
 
@@ -537,7 +660,23 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama`, `telegram`, `profil`, `password
 CREATE TABLE `tb_jabatan` (
   `id_jabatan` int(11) NOT NULL,
   `jabatan` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_jabatan`
+--
+
+INSERT INTO `tb_jabatan` (`id_jabatan`, `jabatan`) VALUES
+(6, 'Kepala Sekolah'),
+(7, 'Wakil Kepala Sekolah'),
+(8, 'Kepala Program Keahlian'),
+(9, 'Guru BK (Bimbingan Konseling)'),
+(10, 'Tata Usaha'),
+(11, 'Staf Perpustakaan'),
+(12, 'Laboran'),
+(13, 'Teknisi IT'),
+(14, 'Petugas Kebersihan'),
+(15, 'Satpam (Satuan Pengamanan)');
 
 -- --------------------------------------------------------
 
@@ -557,7 +696,29 @@ CREATE TABLE `tb_karyawan` (
   `profil` varchar(32) NOT NULL,
   `password` varchar(64) NOT NULL,
   `token_karyawan` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_karyawan`
+--
+
+INSERT INTO `tb_karyawan` (`id_karyawan`, `nip`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jk`, `alamat`, `id_jabatan`, `profil`, `password`, `token_karyawan`) VALUES
+(2, '23472639486', 'Haryono', 'Surabaya', '2003-02-13', 'Laki-laki', 'bmr', 3, 'user.png', '1234', '2785751e8760ca4031c2e3dff4755b2b89f0c8205e79902e0e704910ec0abaa7'),
+(3, '123456', 'Panges', 'Malang', '2015-12-26', 'Perempuan', 'wager', 5, 'user.png', '123456', '9e0d303ee59d198589cb467fb5cfa069ec62448cec11a0c95a20887ed202b557'),
+(4, '1983123456', 'Andi Wijaya', 'Jakarta', '1980-02-12', 'Laki-laki', 'Jl. Merdeka No. 1, Jakarta', 6, 'user.png', 'Andi123!', 'f910f3c9b26a5ff15e12f143b09c30a3f84c90010ad76d2a662a2b3d5d2fdc9f'),
+(5, '1983123457', 'Budi Santoso', 'Bandung', '1982-03-12', 'Laki-laki', 'Jl. Soekarno Hatta No. 10, Bandung', 7, 'user.png', 'Budi123!', '947c8180698e394d1a78b5d0eb3d10ff0877854a56751cc129ab64ca12fdd558'),
+(6, '1983123458', 'Citra Dewi', 'Surabaya', '1986-06-15', 'Perempuan', 'Jl. Darmo No. 5, Surabaya', 9, 'user.png', 'Citra123!', '92c7a8c71abcbb6d5719f49839e8d54d262a6b1d01035b9bb78289279d01f56f'),
+(7, '1983123459', 'Dedi Prasetyo', 'Yogyakarta', '1983-08-08', 'Laki-laki', 'Jl. Malioboro No. 20, Yogyakarta', 10, 'user.png', 'Dedi123!', 'd78c331c4e38b2995de764c5c3af1661fb316f5cfa09474fa36b77dc9ae01024'),
+(8, '1983123460', 'Evi Susanti', 'Medan', '1984-11-11', 'Perempuan', 'Jl. Gatot Subroto No. 8, Medan', 11, 'user.png', 'Evi123!', '435d5fdedc9311db2e58321775dcff4fb395d96308f7355a91b93187d206b548'),
+(9, '1983123461', 'Fajar Kurniawan', 'Semarang', '1983-03-05', 'Laki-laki', 'Jl. Pandanaran No. 15, Semarang', 8, 'user.png', 'Fajar123!', 'ebf3a7a720aee8789b02648c1b12d115119cedabaa5c276ce2887033834e0b36'),
+(10, '1983123462', 'Gina Sari', 'Makassar', '1985-09-19', 'Laki-laki', 'Jl. Ahmad Yani No. 2, Makassar', 12, 'user.png', 'Gina123!', 'c9f77e970ecb94b1524ba6d748dcf3db133f68210986ebfeef2aa0bdfa9827e4'),
+(11, '1983123463', 'Herman Setiawan', 'Palembang', '1982-12-20', 'Laki-laki', 'Jl. Sudirman No. 3, Palembang', 15, 'user.png', 'Herman123!', '61ac7e6071e542248a90e9a0224d56d09d141d2ee96930b507406c28b76ec3ca'),
+(12, '1983123466', 'Kurniawan Setyo', 'Malang', '1982-11-21', 'Laki-laki', 'Jl. Diponegoro No. 22, Malang', 13, 'user.png', 'Kurniawan123!', 'd7ef1599ce0fe56914e20e21ebc488f92915447f1c7ec514b4ba0ef318dc2f8a'),
+(13, '1983123467', 'Satrio Utomo', 'Denpasar', '1984-01-14', 'Laki-laki', 'Jl. Teuku Umar No. 10, Denpasar', 14, 'user.png', 'Satrio123!', '742c464b0dd42063913f78794b7331abf6ec0ff3cc5d9e24a909885cfefe8f01'),
+(16, '1984123466', 'Kuswanto Adi', NULL, NULL, 'Laki-laki', 'Jl. Teuku Umar No. 10, Denpasar', 14, 'user.png', 'Kuswanto123!', '969c2e7f4669b598a809974c86fb8f161d84e96c8fc86a759283f5efda20830f'),
+(17, '1984123467', 'Suryo Hartono', NULL, NULL, 'Laki-laki', 'Jl. Diponegoro No. 22, Malang', 15, 'user.png', 'Suryo123!', 'fed61e9e7a1b047d1198f665ca2b02641cc9bf3b5d62f271ab9ce92f91300b91'),
+(20, '1984123466', 'Kuswanto Adi', NULL, NULL, 'Laki-laki', 'Jl. Teuku Umar No. 10, Denpasar', 14, 'user.png', 'Kuswanto123!', '969c2e7f4669b598a809974c86fb8f161d84e96c8fc86a759283f5efda20830f'),
+(21, '1984123467', 'Suryo Hartono', NULL, NULL, 'Laki-laki', 'Jl. Diponegoro No. 22, Malang', 15, 'user.png', 'Suryo123!', 'fed61e9e7a1b047d1198f665ca2b02641cc9bf3b5d62f271ab9ce92f91300b91');
 
 -- --------------------------------------------------------
 
@@ -576,7 +737,15 @@ CREATE TABLE `tb_kelas` (
   `ditambahkan` int(11) NOT NULL,
   `notif_absen_telegram` enum('Y','N') NOT NULL,
   `token_kelas` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_kelas`
+--
+
+INSERT INTO `tb_kelas` (`id_kelas`, `id_guru`, `kelas`, `masuk_mulai`, `masuk_akhir`, `pulang_mulai`, `pulang_akhir`, `ditambahkan`, `notif_absen_telegram`, `token_kelas`) VALUES
+(2, 2, 'X RPL', '20:38', '20:42', '20:42', '21:00', 1716784275, 'Y', 'b8918b3fc6820295557c0a1762a68154'),
+(3, 2, 'X TKJ', '07:00', '08:00', '15:00', '16:00', 1717053111, 'Y', 'e6ed9d61daef0250d3f65f3549d5e59d');
 
 -- --------------------------------------------------------
 
@@ -591,7 +760,14 @@ CREATE TABLE `tb_pengumuman` (
   `ditambahkan` int(11) NOT NULL,
   `active` enum('active','deactivate') NOT NULL,
   `token_kelas` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_pengumuman`
+--
+
+INSERT INTO `tb_pengumuman` (`id_pengumuman`, `id_guru`, `pengumuman`, `ditambahkan`, `active`, `token_kelas`) VALUES
+(1, 2, 'besok libur', 1717053168, 'active', 'e6ed9d61daef0250d3f65f3549d5e59d');
 
 -- --------------------------------------------------------
 
@@ -622,7 +798,25 @@ CREATE TABLE `tb_siswa` (
   `pekerjaan_ibu` varchar(64) DEFAULT NULL,
   `telepon_rumah` varchar(16) DEFAULT NULL,
   `chat_id` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_siswa`
+--
+
+INSERT INTO `tb_siswa` (`id_siswa`, `id_guru`, `nis`, `nama_depan`, `nama_belakang`, `jk`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `telegram`, `telegram_bot`, `profil`, `password`, `token_kelas`, `username_ortu`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `telepon_rumah`, `chat_id`) VALUES
+(3, 2, '20240001', 'Ali', 'Wijaya', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'Y', 'user-yellow', '0747', 'b8918b3fc6820295557c0a1762a68154', '10047171', NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 2, '20240002', 'Budi', 'Santoso', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-green', '6017', 'b8918b3fc6820295557c0a1762a68154', '44771070', NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 2, '20240003', 'Citra', 'Dewi', 'Perempuan', NULL, NULL, NULL, NULL, NULL, 'N', 'user-purple', '7371', 'b8918b3fc6820295557c0a1762a68154', '41777016', NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 2, '20240004', 'Dedi', 'Prasetyo', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-purple', '1074', 'b8918b3fc6820295557c0a1762a68154', '14716014', NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 2, '20240005', 'Evi', 'Susanti', 'Perempuan', NULL, NULL, NULL, NULL, NULL, 'N', 'user-dark', '1701', 'b8918b3fc6820295557c0a1762a68154', '70460601', NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 2, '20240006', 'Fajar', 'Kurniawan', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-green', '4177', 'b8918b3fc6820295557c0a1762a68154', '40717046', NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 2, '20240007', 'Gina', 'Sari', 'Perempuan', NULL, NULL, NULL, NULL, NULL, 'N', 'user-blue', '4171', 'b8918b3fc6820295557c0a1762a68154', '07701144', NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 2, '20240008', 'Herman', 'Setiawan', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-red', '7404', 'b8918b3fc6820295557c0a1762a68154', '77011470', NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 2, '20240009', 'Indah', 'Permata', 'Perempuan', NULL, NULL, NULL, NULL, NULL, 'N', 'user-red', '0779', 'b8918b3fc6820295557c0a1762a68154', '77714711', NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 2, '20240010', 'Ratna', 'Kusuma', 'Perempuan', NULL, NULL, NULL, NULL, NULL, 'N', 'user-red', '0741', 'b8918b3fc6820295557c0a1762a68154', '41410764', NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 2, '20240011', 'Kurniawan', 'Setyo', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-yellow', '4407', 'b8918b3fc6820295557c0a1762a68154', '17714640', NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 2, '20240012', 'Satrio', 'Utomo', 'Laki-laki', NULL, NULL, NULL, NULL, NULL, 'N', 'user-green', '1271', 'b8918b3fc6820295557c0a1762a68154', '76004774', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -636,7 +830,7 @@ CREATE TABLE `tb_tanggapan` (
   `id_siswa` int(11) NOT NULL,
   `tanggapan` text NOT NULL,
   `pada` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -645,10 +839,10 @@ CREATE TABLE `tb_tanggapan` (
 --
 
 CREATE TABLE `w_districts` (
-  `id` char(7) NOT NULL,
-  `regency_id` char(4) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id` char(7) COLLATE utf8_unicode_ci NOT NULL,
+  `regency_id` char(4) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `w_districts`
@@ -7882,9 +8076,9 @@ INSERT INTO `w_districts` (`id`, `regency_id`, `name`) VALUES
 --
 
 CREATE TABLE `w_provinces` (
-  `id` char(2) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id` char(2) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `w_provinces`
@@ -7933,10 +8127,10 @@ INSERT INTO `w_provinces` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `w_regencies` (
-  `id` char(4) NOT NULL,
-  `province_id` char(2) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id` char(4) COLLATE utf8_unicode_ci NOT NULL,
+  `province_id` char(2) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `w_regencies`
@@ -8465,10 +8659,10 @@ INSERT INTO `w_regencies` (`id`, `province_id`, `name`) VALUES
 --
 
 CREATE TABLE `w_villages` (
-  `id` char(10) NOT NULL,
-  `district_id` char(7) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id` char(10) COLLATE utf8_unicode_ci NOT NULL,
+  `district_id` char(7) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `w_villages`
@@ -89255,73 +89449,73 @@ ALTER TABLE `w_villages`
 -- AUTO_INCREMENT untuk tabel `a_masuk`
 --
 ALTER TABLE `a_masuk`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_masukket`
 --
 ALTER TABLE `a_masukket`
-  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_masukket_guru`
 --
 ALTER TABLE `a_masukket_guru`
-  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_masukket_karyawan`
 --
 ALTER TABLE `a_masukket_karyawan`
-  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_masukket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_masuk_guru`
 --
 ALTER TABLE `a_masuk_guru`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_masuk_karyawan`
 --
 ALTER TABLE `a_masuk_karyawan`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulang`
 --
 ALTER TABLE `a_pulang`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulangket`
 --
 ALTER TABLE `a_pulangket`
-  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulangket_guru`
 --
 ALTER TABLE `a_pulangket_guru`
-  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulangket_karyawan`
 --
 ALTER TABLE `a_pulangket_karyawan`
-  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pulangket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulang_guru`
 --
 ALTER TABLE `a_pulang_guru`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `a_pulang_karyawan`
 --
 ALTER TABLE `a_pulang_karyawan`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `j_guru`
@@ -89357,37 +89551,37 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
-  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_tanggapan`

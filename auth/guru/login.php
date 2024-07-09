@@ -49,7 +49,12 @@ if (isset($_SESSION['guru'])) {
                   <div class="form-group">
                      <input type="password" name="password" id="password" class="form-control form-control2" placeholder="Password">
                   </div>
-                  <div class="form-group">
+                  
+                           <button type="submit" class="btn btn-linear-primary btn-block waves-effect waves-light" id="btn-login">
+                              Login
+                           </button>
+                        
+                  <!-- <div class="form-group">
                      <div class="row">
                         <div class="col-6 pr-2">
                            <a href="daftar" class="btn btn-outline-linear-primary btn-block waves-effect waves-dark">
@@ -62,7 +67,7 @@ if (isset($_SESSION['guru'])) {
                            </button>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                </form>
             </div>
          </div>

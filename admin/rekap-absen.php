@@ -18,8 +18,8 @@ if (mysqli_num_rows($result_a_masuk_siswa) == 0 && mysqli_num_rows($result_a_mas
                   <select name="what_rekap" id="what_rekap" class="custom-select" required>
                      <option value=""></option>
                      <option>Siswa</option>
-                     <option>Guru</option>
-                     <option>Karyawan</option>
+                     <!-- <option>Guru</option>
+                     <option>Karyawan</option> -->
                   </select>
                </div>
                <div class="col-12 col-md-3 col-lg-3 my-2">

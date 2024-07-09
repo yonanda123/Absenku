@@ -248,7 +248,7 @@ $j_guru = query("SELECT * FROM j_guru LIMIT 1"); ?>
          processData: false,
          cache: false,
          success: function(data) {
-            if (data == 'berhasil') {
+            if (data !== 'berhasil') {
                pesan('Data berhasil di import', 3000);
                $('[data-dismiss=modal]').trigger({
                   type: 'click'

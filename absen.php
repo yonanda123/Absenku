@@ -491,7 +491,7 @@ if (!isset($_SESSION['siswa'])) {
       <div class="container">
          <img src="<?= base_url() ?>/assets/img/logo.png" alt="Logo">
          <p>
-            &copy; Copyright 2024 <?= $tb_setelan['nama'] ?>
+            &copy; Copyright smkpgrisumberpucung 2024 <?= $tb_setelan['nama'] ?>
          </p>
       </div>
    </div>

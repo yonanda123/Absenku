@@ -44,11 +44,11 @@ $tb_guru = query("SELECT * FROM tb_guru WHERE id_guru = '$id_guru'");
             <h5 class="mb-4">Edit profil</h5>
             <form id="formEditProfil" enctype="multipart/form-data">
                <input type="hidden" name="id_guru" value="<?= $tb_guru['id_guru'] ?>">
-               <div class="form-group d-flex justify-content-center pb-5">
-                  <div class="position-relative w-25 h-25">
-                     <img src="<?= base_url() ?>/img/guru/<?= $tb_guru['profil'] ?>" alt="profil" class="img-fluid b-radius-50deg" id="preview-profil" style="width: 125px; height: 125px;">
+               <div class="form-group pb-5">
+                  <div class="position-relative">
+                     <img src="<?= base_url() ?>/img/karyawan/<?= $tb_guru['profil'] ?>" alt="profil" id="preview-profil">
                      <input type="file" name="profil" id="profil" hidden>
-                     <label for="profil" class="position-absolute cursor-pointer text-primary" style="right: 8px; bottom: 0;" data-tooltip="tooltip" title="Ukuran maksimum 3 MB dan Ekstensi harus jpg, jpeg atau png! disarankan 512x512">
+                     <label for="profil" class="text-primary" data-tooltip="tooltip" title="Ukuran maksimum 3 MB dan Ekstensi harus jpg, jpeg atau png! disarankan 512x512">
                         <i class="fa fa-pen"></i>
                      </label>
                   </div>

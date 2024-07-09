@@ -27,7 +27,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_siswa ts JOIN tb_kelas tk ON ts 
       <div class="card">
          <div class="py-2">
             <div class="row px-4 py-2">
-               <div class="col-md-6 col-lg-8">
+               <div class="col-md-6 col-lg-8 mb-3">
                   <button type="submit" class="btn btn-danger waves-effect waves-light">
                      <i class="fa fa-trash"></i>
                   </button>
@@ -274,7 +274,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_siswa ts JOIN tb_kelas tk ON ts 
          processData: false,
          cache: false,
          success: function(data) {
-            if (data == 'berhasil') {
+            if (data !== 'berhasil') {
                pesan('Data berhasil di import', 3000);
                $('[data-dismiss=modal]').trigger({
                   type: 'click'

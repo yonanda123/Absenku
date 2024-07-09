@@ -25,6 +25,34 @@ if (!isset($_SESSION['admin'])) {
    <link rel="stylesheet" href="<?= base_url() ?>/assets/absensi/css/style.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+
+   <style>
+      #formEditProfil .form-group {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      #formEditProfil .form-group .position-relative {
+         width: 125px;
+         height: 125px;
+         position: relative;
+      }
+
+      #formEditProfil .form-group .position-relative img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+
+      #formEditProfil .form-group .position-relative label {
+         position: absolute;
+         right: 20px;
+         bottom: 0;
+         cursor: pointer;
+      }
+   </style>
 </head>
 
 <body>
@@ -60,7 +88,7 @@ if (!isset($_SESSION['admin'])) {
                      <span class="nav-link">Monitoring</span>
                   </li>
                   <li class="nav-item waves-effect waves-light" id="click-rekap-absen">
-                     <span class="nav-link">Rekap absen</span>
+                     <span class="nav-link">Rekap absen Siswa</span>
                   </li>
                   <li class="nav-item waves-effect waves-light" id="click-lap-absen">
                      <span class="nav-link">Laporan Absen</span>
@@ -83,7 +111,7 @@ if (!isset($_SESSION['admin'])) {
       <div class="container">
          <img src="<?= base_url() ?>/assets/img/logo.png" alt="Logo">
          <p>
-            &copy; Copyright 2024 <?= $tb_setelan['nama'] ?>
+            &copy; Copyright smkpgrisumberpucung 2024 <?= $tb_setelan['nama'] ?>
          </p>
       </div>
    </div>
@@ -107,19 +135,25 @@ if (!isset($_SESSION['admin'])) {
    <script src="<?= base_url() ?>/assets/select2/js/select2.min.js"></script>
    <script src="<?= base_url() ?>/assets/absensi/js/script.js"></script>
    <script>
-      $(function() {
-         $('.overlay-scrollbars').overlayScrollbars({
-            className: "os-theme-dark",
-            scrollbars: {
-               autoHide: 'l',
-               autoHideDelay: 0
-            }
-         });
+   $(document).ready(function() {
+      // Initialize overlayScrollbars
+      $('.overlay-scrollbars').overlayScrollbars({
+         className: "os-theme-dark",
+         scrollbars: {
+            autoHide: 'l',
+            autoHideDelay: 0
+         }
       });
 
+      // Add active class on nav-item click
       $('.nav-item').click(function() {
          $('.nav-item').removeClass('active');
          $(this).addClass('active');
+
+         // Close the navbar collapse after click
+         if ($('.navbar-toggler').attr('aria-expanded') == 'true') {
+            $('.navbar-toggler').click();
+         }
       });
 
       function clickMenu(id, file) {
@@ -143,18 +177,20 @@ if (!isset($_SESSION['admin'])) {
       clickMenu('click-rekap-absen', 'rekap-absen');
       clickMenu('click-lap-absen', 'lap-absen');
       clickMenu('click-setelan', 'setelan');
-   </script>
+   });
+
    <?php if (isset($_GET['menu'])) { ?>
-      <script>
-         $('#click-<?= $_GET['menu'] ?>').addClass('active');
-         $('#content').load('<?= $_GET['menu'] ?>');
-      </script>
+   $(document).ready(function() {
+      $('#click-<?= $_GET['menu'] ?>').addClass('active');
+      $('#content').load('<?= $_GET['menu'] ?>');
+   });
    <?php } else { ?>
-      <script>
-         $('#content').load('beranda');
-         history.pushState('beranda', 'beranda', '?menu=beranda');
-      </script>
+   $(document).ready(function() {
+      $('#content').load('beranda');
+      history.pushState('beranda', 'beranda', '?menu=beranda');
+   });
    <?php } ?>
+</script>
 </body>
 
 </html>

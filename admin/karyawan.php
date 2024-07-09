@@ -227,7 +227,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_karyawan tk JOIN tb_jabatan tj O
          processData: false,
          cache: false,
          success: function(data) {
-            if (data == 'berhasil') {
+            if (data !== 'berhasil') {
                pesan('Data berhasil di import', 3000);
                $('[data-dismiss=modal]').trigger({
                   type: 'click'

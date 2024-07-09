@@ -18,15 +18,39 @@
       body {
          background: #F1F7FF;
       }
+      .navbar-logo {
+    height: 42px;
+    margin-right: 8px;
+}
+
+.navbar-text {
+    white-space: nowrap;
+    color: #000000;
+}
+
+@media (max-width: 576px) {
+    .navbar-text {
+        font-size: 14px; /* Sesuaikan ukuran font untuk layar kecil */
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Pastikan elemen tetap berada di tengah */
+        text-align: center;
+    }
+}
+
    </style>
 </head>
 
 <nav class="navbar navbar-landing-page navbar-expand-lg navbar-light fixed-top py-4">
-   <div class="container">
-      <a class="navbar-brand" href="<?= base_url() ?>"><?= $tb_setelan['nama'] ?></a>
-      <button class="navbar-toggler outline-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
+   <div class="container my-auto">
+      <a class="navbar-brand" href="<?= base_url() ?>">
+         <img src="<?= base_url() ?>/assets/img/logo.png" alt="Logo" class="navbar-logo">
+         <span class="navbar-text">SMK PGRI SUMBER PUCUNG</span>
+      </a>
    </div>
 </nav>
 
@@ -34,10 +58,12 @@
    <div class="container">
       <div class="row d-flex justify-content-center">
          <div class=" col-12 col-lg-6 my-auto">
-            <h1>
-               <?= $tb_setelan['nama'] ?>
-               <span>- lebih mudah & cepat</span>
-            </h1>
+         <h1>
+            <a href="<?= base_url() ?>" style="text-decoration: none;">
+            <?= $tb_setelan['nama'] ?>
+            <span>- lebih mudah & cepat</span>
+            </a>
+         </h1>
             <p>adalah sebuah kegiatan pengambilan data guna mengetahui jumlah kehadiran pada suatu acara. Setiap kegiatan yang membutuhkan informasi mengenai peserta tentu akan melakukan absensi.</p>
             <a href="<?= base_url() ?>/auth/siswa" class="btn btn-outline-linear-primary waves-effect my-2">
                Login Siswa
@@ -68,7 +94,7 @@
    <div class="container">
       <img src="<?= base_url() ?>/assets/img/logo.png" alt="Logo">
       <p>
-         &copy; Copyright 2024 <?= $tb_setelan['nama'] ?>
+         &copy; Copyright smkpgrisumberpucung 2024 <?= $tb_setelan['nama'] ?>
       </p>
    </div>
 </div>

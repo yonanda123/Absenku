@@ -21,6 +21,33 @@ if (!isset($_SESSION['karyawan'])) {
    <link rel="stylesheet" href="<?= base_url() ?>/assets/absensi/css/style.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+   <style>
+      #formEditProfil .form-group {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      #formEditProfil .form-group .position-relative {
+         width: 125px;
+         height: 125px;
+         position: relative;
+      }
+
+      #formEditProfil .form-group .position-relative img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+
+      #formEditProfil .form-group .position-relative label {
+         position: absolute;
+         right: 20px;
+         bottom: 0;
+         cursor: pointer;
+      }
+   </style>
 </head>
 
 <body>
@@ -100,11 +127,11 @@ if (!isset($_SESSION['karyawan'])) {
                         <h5 class="mb-4">Edit profil</h5>
                         <form id="formEditProfil" enctype="multipart/form-data">
                            <input type="hidden" name="id_karyawan" value="<?= $tb_karyawan['id_karyawan'] ?>">
-                           <div class="form-group d-flex justify-content-center pb-5">
-                              <div class="position-relative w-25 h-25">
-                                 <img src="<?= base_url() ?>/img/karyawan/<?= $tb_karyawan['profil'] ?>" alt="profil" class="img-fluid b-radius-50deg" id="preview-profil" style="width: 125px; height: 125px;">
+                           <div class="form-group pb-5">
+                              <div class="position-relative">
+                                 <img src="<?= base_url() ?>/img/karyawan/<?= $tb_karyawan['profil'] ?>" alt="profil" id="preview-profil">
                                  <input type="file" name="profil" id="profil" hidden>
-                                 <label for="profil" class="position-absolute cursor-pointer text-primary" style="right: 8px; bottom: 0;" data-tooltip="tooltip" title="Ukuran maksimum 3 MB dan Ekstensi harus jpg, jpeg atau png! disarankan 512x512">
+                                 <label for="profil" class="text-primary" data-tooltip="tooltip" title="Ukuran maksimum 3 MB dan Ekstensi harus jpg, jpeg atau png! disarankan 512x512">
                                     <i class="fa fa-pen"></i>
                                  </label>
                               </div>

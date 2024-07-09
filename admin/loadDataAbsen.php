@@ -621,7 +621,7 @@ if ($_POST['what_rekap'] == 'Siswa') {
       </button>
    </div>
    <div class="label-menu">
-      absen masuk karyawans
+      absen masuk karyawan
    </div>
    <div class="table-responsive mt-4 overlay-scrollbars">
       <table class="table table-bordered table-hover">

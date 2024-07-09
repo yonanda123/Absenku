@@ -11,27 +11,22 @@ if (mysqli_num_rows($result_a_masuk_siswa) == 0 && mysqli_num_rows($result_a_mas
    </div>
 <?php } else { ?>
    <div class="card">
-      <div class="p-3">
-         <form id="formFilterRekap">
+      <div class="card-body p-3">
+         <form id="formFilterRekap" class="w-100">
             <div class="row">
-               <div class="col-12 col-md-3 col-lg-3 my-2">
+               <div class="col-12 col-md-4 my-2">
                   <select name="what_rekap" id="what_rekap" class="custom-select" required>
                      <option value=""></option>
                      <option>Guru</option>
                      <option>Karyawan</option>
                   </select>
                </div>
-               <div class="col-12 col-md-3 col-lg-3 my-2">
-                  <select name="token_kelas" id="token_kelas" class="custom-select" required disabled="disabled">
-                     <option value=""></option>
-                  </select>
-               </div>
-               <div class="col-12 col-md-3 col-lg-3 my-2">
+               <div class="col-12 col-md-4 my-2">
                   <select name="m_bulan_tahun" id="m_bulan_tahun" class="custom-select" required disabled="disabled">
                      <option value=""></option>
                   </select>
                </div>
-               <div class="col-12 col-md-3 col-lg-3 my-2">
+               <div class="col-12 col-md-4 my-2">
                   <button type="submit" class="btn btn-primary btn-lg btn-block">
                      <i class="fa fa-filter fa-fw"></i> Filter
                   </button>
